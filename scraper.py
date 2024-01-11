@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Initialize Selenium WebDrivers
+# Initialize Selenium WebDriver
 driver = webdriver.Chrome()
 
 # URL of the UCSC nutrition page
