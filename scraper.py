@@ -34,6 +34,19 @@ for hall in dining_halls:
         # Click the nutrition calculator link
         driver.find_element(By.LINK_TEXT, "Nutrition Calculator").click()
 
+        # Find all vegan markers
+        vegan_markers = driver.find_elements(By.XPATH, "//img[@src='LegendImages/vegan.gif']")
+
+        # Process each vegan item
+        for marker in vegan_markers:
+            # Get the parent element and then find the dish name within that element
+            parent_element = marker.find_element(By.XPATH, "../..")  # Adjust according to the actual structure
+            dish_name = parent_element.find_element(By.CLASS_NAME, "longmenucoldispname").text
+            print(f"Vegan dish found: {dish_name}")
+
+            # Additional logic to interact with the dish (e.g., clicking checkboxes)
+            # ...
+
     except Exception as e:
         print(f"An error occurred while processing {hall}: {e}")
         driver.save_screenshot(f"error_{hall}.png")  # Save a screenshot for debugging
