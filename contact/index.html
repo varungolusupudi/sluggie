@@ -10,55 +10,138 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="bg-white p-6 rounded shadow-md">
-        <form action="" method="get" class="form-example">
-            <!-- Form content -->
-            <div class="form-example">
-                <label for="name"><b>Email</b></label>
-                <input type="text" name="name" id="name" required />
-                <label for="password"><b>Password</b></label>
-                <div class="input-group">
-                    <input type="password" name="password" id="password" required class="form-control" />
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="togglePassword" style="cursor: pointer;">
-                            <i class="fas fa-eye"></i>
-                        </span>
+    <div class="background-design">
+        <!-- This div will have the background and the flowing design -->
+    </div>
+    <div class="cursor-small"></div>
+    <div class="cursor-big"></div>
+
+    <div class="container main-content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <div class="form-pane rounded shadow">
+                    <form action="" method="get" class="form-example">
+                        <!-- Form content -->
+                        <h1 class="text-lg">Log in</h1>
+                        <p>Welcome back! Please enter your details</p>
+                        <div class="form-example">
+                            <label for="email"><b>Email</b></label>
+                            <input type="email" name="email" id="email" required class="form-control mb-2" />
+
+                            <label for="password"><b>Password</b></label>
+                            <div class="input-group mb-2 custom-input-group">
+                                <input type="password" name="password" id="password" required
+                                    class="form-control custom-form-control" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <a href="#" class="purple-link text-sm">forgot password?</a>
+                            <button class="btn btn-primary btn-block mt-2" id="log-in">Log in</button>
+                        </div>
+                    </form>
+
+                    <!-- Google Sign-in Button -->
+                    <div class="form-example mt-4">
+                        <!-- Divider with text "or continue" -->
+                        <div class="divider-container">
+                            <hr class="divider-line">
+                            <span class="divider-text">Or Continue With</span>
+                            <hr class="divider-line">
+                        </div>
+
+                        <!-- Buttons container -->
+                        <div class="d-flex justify-content-center mt-4">
+                            <button type="button" class="btn google-btn" style="border: 1px solid #ccc;">
+                                <img src="goog.png" alt="Google"
+                                    style="height: 20px; display: inline; vertical-align: middle;">
+                                Google
+                            </button>
+                        </div>
+
+
+                        <div class="text-center mt-12 text-gray-500 mx-auto">
+                            Don't have an account? <a href="#" class="purple-link text-base">Sign up</a>
+                        </div>
+
                     </div>
                 </div>
-                <a href="#" class="purple-link text-sm">forgot password?</a>
-                <button class="btn" id="log-in" style="display: block;">Log in</button>
-
             </div>
-        </form>
-
-        <!-- Google Sign-in Button -->
-        <div class="form-example mt-4">
-            <!-- Divider with text "or continue" -->
-            <div class="divider-container">
-                <hr class="divider-line">
-                <span class="divider-text">Or Continue With</span>
-                <hr class="divider-line">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <img src="img.jpg" alt="Descriptive Text" class="img-fluid rounded"
+                    style="max-width: 100%; height: auto; border-radius: 15px;">
             </div>
-
-            <!-- Buttons container -->
-            <div class="d-flex justify-content-center mt-4">
-                <button type="button" class="btn google-btn" style="border: 1px solid #ccc;">
-                    <img src="goog.png" alt="Google" style="height: 20px; display: inline; vertical-align: middle;">
-                    Google
-                </button>
-            </div>
-
-
-            <div class="text-center mt-12 text-gray-500 mx-auto">
-                Don't have an account? <a href="#" class="purple-link text-base">Sign up</a>
-            </div>
-
         </div>
+        <!-- Add a <div> element with id="sign-in" to your HTML -->
 
 
+        <div id="sign-in"></div>
+
+
+        <script>
+            const script = document.createElement('script');
+            // Set your Clerk publishable key
+            script.setAttribute('pk_test_Y29ycmVjdC1tYWNhdy01MC5jbGVyay5hY2NvdW50cy5kZXYk', `pk_test_Y29ycmVjdC1tYWNhdy01MC5jbGVyay5hY2NvdW50cy5kZXYk`);
+            script.async = true;
+            script.src = `https://correct-macaw-50.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js`;
+
+            script.addEventListener('load', async function () {
+                await window.Clerk.load();
+
+                const signInComponent = document.querySelector('#sign-in');
+
+                window.Clerk.openSignIn(signInComponent, {
+                    appearance: {
+                        baseTheme: dark
+                    }
+                });
+            });
+            document.body.appendChild(script);
+        </script>
+        <!-- Password toggle -->
+        <script>
+            document.getElementById('togglePassword').addEventListener('click', function (e) {
+                const password = document.getElementById('password');
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                // toggle the eye / eye-slash icon
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        </script>
+
+        <!-- Custom Cursor -->
+        <script>
+            let timeout;
+
+            document.addEventListener('mousemove', function (e) {
+                clearTimeout(timeout);
+                moveCursor(e, '.cursor-small', 0);
+                moveCursor(e, '.cursor-big', 100);
+
+                const bigCursor = document.querySelector('.cursor-big');
+                bigCursor.style.opacity = '0.15'; // Show big cursor on move
+
+                // Hide big cursor after 5 seconds of inactivity
+                timeout = setTimeout(() => bigCursor.style.opacity = '0', 1500);
+            });
+
+            function moveCursor(e, cursorClass, delay) {
+                const cursor = document.querySelector(cursorClass);
+                setTimeout(() => {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                }, delay);
+            }
+        </script>
 
         <!-- Bootstrap JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
