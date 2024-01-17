@@ -13,35 +13,43 @@ url = 'https://nutrition.sa.ucsc.edu/'
 driver.get(url)
 
 # List of dining halls to scrape
-dining_halls = ['College Nine/John R. Lewis Dining Hall', 'Cowell/Stevenson Dining Hall', 'Crown/Merrill Dining Hall', 'Porter/Kresge Dining Hall', 'Rachel Carson/Oakes Dining Hall']
+dining_halls = ['College Nine/John R. Lewis Dining Hall', 'Cowell/Stevenson Dining Hall',
+                'Crown/Merrill Dining Hall', 'Porter/Kresge Dining Hall', 'Rachel Carson/Oakes Dining Hall']
 
 # Loop through each dining hall
 for hall in dining_halls:
     try:
-        print(f"Entering {hall}...")  # Print message when entering a dining hall
+        # Print message when entering a dining hall
+        print(f"Entering {hall}...")
 
         # Wait for the dining hall links to be loaded
-        WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "locations")))
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_all_elements_located((By.CLASS_NAME, "locations")))
 
         # Use XPath to find the link to the dining hall
         xpath = f"//a[contains(text(), '{hall}')]"
-        link = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, xpath)))
+        link = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, xpath)))
         link.click()
 
         # Wait for the nutrition calculator link to be clickable
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Nutrition Calculator")))
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
+            (By.LINK_TEXT, "Nutrition Calculator")))
 
         # Click the nutrition calculator link
         driver.find_element(By.LINK_TEXT, "Nutrition Calculator").click()
 
         # Find all vegan markers
-        vegan_markers = driver.find_elements(By.XPATH, "//img[@src='LegendImages/vegan.gif']")
+        vegan_markers = driver.find_elements(
+            By.XPATH, "//img[@src='LegendImages/vegan.gif']")
 
         # Process each vegan item
         for marker in vegan_markers:
             # Get the parent element and then find the dish name within that element
-            parent_element = marker.find_element(By.XPATH, "../..")  # Adjust according to the actual structure
-            dish_name = parent_element.find_element(By.CLASS_NAME, "longmenucoldispname").text
+            # Adjust according to the actual structure
+            parent_element = marker.find_element(By.XPATH, "../..")
+            dish_name = parent_element.find_element(
+                By.CLASS_NAME, "longmenucoldispname").text
             print(f"Vegan dish found: {dish_name}")
 
             # Additional logic to interact with the dish (e.g., clicking checkboxes)
@@ -49,8 +57,10 @@ for hall in dining_halls:
 
     except Exception as e:
         print(f"An error occurred while processing {hall}: {e}")
-        driver.save_screenshot(f"error_{hall}.png")  # Save a screenshot for debugging
-        print("Page Source:", driver.page_source)  # Print page source for review
+        # Save a screenshot for debugging
+        driver.save_screenshot(f"error_{hall}.png")
+        # Print page source for review
+        print("Page Source:", driver.page_source)
 
     finally:
         print(f"Exiting {hall}...")  # Print message when exiting a dining hall
