@@ -1,0 +1,237 @@
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email],
+input[type=password],
+select {
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 16;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label{
+    margin: 5px 0px;
+}
+.custom-input-group .form-control {
+    flex: 1 0 auto;
+}
+.custom-input-group .input-group-append {
+    flex-shrink: 0;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    cursor: none;
+}
+
+/* Purple background for the entire page */
+.purple-background {
+    background-color: #fff; /* Your specific purple color */
+    min-height: 100vh; /* Full viewport height */
+    padding: 50px 0; /* Padding to ensure the pane is centered vertically */
+}
+
+/* Style for the form pane */
+.form-pane {
+    background-color: #FFFFFF; /* White background for the pane */
+    padding: 30px; /* Padding inside the pane */
+    border-radius: 15px; /* Rounded corners for the pane */
+    margin-bottom: 20px; /* Margin-bottom to separate form and image */
+}
+
+
+
+.background-design {
+    background-color: #fff; /* Your purple background */
+    border-radius: 25px; /* Rounded corners for the design */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Ensures it stays in the background */
+    overflow: hidden; /* Ensures the content does not flow outside the border-radius */
+    /* Add any additional background styling such as gradients or images */
+}
+
+.main-content {
+    position: relative;
+    z-index: 1; /* Ensures your content sits on top of the background design */
+}
+
+.form-section, .image-section {
+    padding: 30px;
+}
+
+/* Ensure the image is the same size as the form */
+.image-section img {
+    max-height: 600px; /* Adjust as needed */
+    object-fit: cover;
+    border-radius: 15px; /* Rounded corners for the image */
+}
+
+
+.form-container {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.input-group-text {
+    border-radius: 0 4px 4px 0;
+}
+.btn {
+    border-radius: 4px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg-white {
+    border-radius: 8px; /* Adjust the border-radius as needed */
+}
+
+a {
+    text-decoration: none;
+}
+
+a.purple-link, a.purple-link.text-sm {
+    margin-bottom: 16px; /* Add space below the links */
+    display: block; 
+}
+
+
+
+.text-primary, .purple-link {
+    color: #8A2BE2; /* Use the purple for primary text links */
+    font-weight: bold;
+}
+
+.text-primary:hover, .purple-link:hover {
+    color: #9F7AEA; /* Lighter purple for hover state */
+    text-decoration: none;
+}
+
+
+.half-hr {
+    display: inline;
+}
+
+#log-in {
+    background-color: #8A2BE2;
+    border: none;
+    color: azure;
+    padding: 11px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    width: 100%;
+    font-size: 18px;
+}
+
+/* Divider hr css code */
+.divider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.divider-line {
+    flex-grow: 1;
+    /* Allows the lines to grow and occupy the remaining space */
+    flex-shrink: 1;
+    /* Allows the lines to shrink if there isn't enough space */
+    flex-basis: 20%;
+    /* Initial length of the lines */
+    height: 1px;
+    /* Sets the height of the hr */
+    background-color: #808080;
+    /* Sets the line color */
+    border: none;
+    /* Removes the border */
+}
+
+.divider-text {
+    padding: 0px;
+    color:#808080;
+    font-weight: 500;
+}
+
+/* Contact using with buttons */
+.google-btn{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.google-btn:hover{
+    background-color: #f0f0f0;
+}
+
+.logo-icon {
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+
+/* Cursor */
+.cursor-small, .cursor-big {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-small {
+    width: 8px;
+    height: 8px;
+    background-color: #5D3F6A; /* Dark purple for the small cursor */
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none; /* Prevents the cursor from interfering with clickable elements */
+}
+
+.cursor-big {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(138, 43, 226, 0.3); /* Adjusted opacity */
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    transition: transform 0.2s ease-out; /* This creates the lag effect */
+    
+}
+
