@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import '../App.css'; 
 import '../style.css'
+import { useNavigate } from 'react-router-dom';
 
 const SignInForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordShown, setPasswordShown] = useState(false);
+    const Navigate = useNavigate();
 
     // Toggle the visibility of the password
     const togglePasswordVisibility = () => {
@@ -14,8 +16,9 @@ const SignInForm = () => {
 
     // Example function to handle form submission
     const handleSubmit = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
         // Handle sign-in logic here
+        Navigate('/Personal')
     };
 
     return (
@@ -59,8 +62,6 @@ const SignInForm = () => {
                                     </button>
                                 </div>
                             </div>
-
-                            <a href="#" className="purple-link text-sm">Forgot password?</a>
                             <button className="btn btn-primary btn-block mt-2" type="submit">Log in</button>
                         </form>
 
@@ -82,7 +83,7 @@ const SignInForm = () => {
                         </div>
 
                         <div className="text-center mt-12 text-gray-500 mx-auto">
-                            Don't have an account? <a href="#" className="purple-link text-base">Sign up</a>
+                            Don't have an account? <a href="/signup" className="purple-link text-base">Sign up</a>
                         </div>
                     </div>
                 </div>
