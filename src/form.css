@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+/* Custom styles for the checkmark */
+.checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #f4f4f4;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 10px; /* space between checkmark and label text */
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+.checkbox-container .checkmark:after {
+    content: "";
+    display: none;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.back-btn, .next-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-btn {
+    background-color: #ccc;
+}
+
+.next-btn {
+    background-color: #008CBA;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+/* Custom styles for the checkmark */
+.checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #f4f4f4;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 10px; /* space between checkmark and label text */
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+.checkbox-container .checkmark:after {
+    content: "";
+    display: none;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.back-btn, .next-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-btn {
+    background-color: #ccc;
+}
+
+.next-btn {
+    background-color: #008CBA;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+.allergy-box {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+.remove-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    color: red;
+}
+
+#allergies-container {
+    margin-bottom: 10px;
+}
+
+input#allergy-input {
+    margin-bottom: 20px; /* Adjust space between input and buttons */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#allergy-input {
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    padding: 20px; /* Increased padding */
+    font-size: 1.25em; /* Larger text size */
+    height: 60px; /* Increased height for the input */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block; /* Ensure the input is block level to fill width */
+}

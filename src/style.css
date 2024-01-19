@@ -259,7 +259,7 @@ body, html {
 .card-body {
     padding: 10rem;
     width: auto; /* Auto width to fit the content */
-    max-width: 700px; /* Set a max width for the form if necessary */
+    max-width: 600px; /* Set a max width for the form if necessary */
 }
 .divider {
     display: flex;
@@ -291,7 +291,7 @@ body, html {
   }
   
   .header {
-    background-color: yellow; /* Yellow background for the header */
+    background-color: blue; /* Yellow background for the header */
     padding: 10px 0;
     text-align: center;
     width: 100%; /* Full width */
@@ -305,7 +305,7 @@ body, html {
     margin: 0; /* Remove default margin */
     font-size: 2em;
     font-weight: bold;
-    color: black; /* Text color for the title */
+    color: orange; /* Text color for the title */
   }
   
   .navbar {
@@ -343,5 +343,6 @@ body, html {
     padding-top: 260px; /* Height of the navbar plus some extra space */
     padding-bottom: 20px;
   }
+
   
   /* Additional content styles go here */ 
