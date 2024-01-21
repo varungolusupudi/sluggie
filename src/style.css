@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Raleway:wght@700&display=swap');
+
 input[type=text],
 select {
     width: 100%;
@@ -22,14 +25,39 @@ select {
     box-sizing: border-box;
 }
 
-label{
+label {
     margin: 5px 0px;
 }
+
 .custom-input-group .form-control {
     flex: 1 0 auto;
 }
+
 .custom-input-group .input-group-append {
     flex-shrink: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* This will ensure that it takes up at least the full viewport height */
 }
 
 body {
@@ -44,48 +72,75 @@ body {
 
 /* Purple background for the entire page */
 .purple-background {
-    background-color: #fff; /* Your specific purple color */
-    min-height: 100vh; /* Full viewport height */
-    padding: 50px 0; /* Padding to ensure the pane is centered vertically */
+    background-color: #fff;
+    /* Your specific purple color */
+    min-height: 100vh;
+    /* Full viewport height */
+    padding: 50px 0;
+    /* Padding to ensure the pane is centered vertically */
 }
 
 /* Style for the form pane */
 .form-pane {
-    background-color: #FFFFFF; /* White background for the pane */
-    padding: 30px; /* Padding inside the pane */
-    border-radius: 15px; /* Rounded corners for the pane */
-    margin-bottom: 20px; /* Margin-bottom to separate form and image */
+    background-color: #FFFFFF;
+    /* White background for the pane */
+    padding: 30px;
+    /* Padding inside the pane */
+    border-radius: 15px;
+    /* Rounded corners for the pane */
+    margin-bottom: 20px;
+    /* Margin-bottom to separate form and image */
+}
+
+.btn-get-started:hover {
+    background-color: transparent;
+    border-color: #4299e1;
+    /* Tailwind's blue-500 color */
+    color: #4299e1;
+    /* Tailwind's blue-500 color */
+}
+
+.nav-link:hover {
+    color: #4299e1 !important;
+    /* Tailwind's blue-500 color */
 }
 
 
-
 .background-design {
-    background-color: #fff; /* Your purple background */
-    border-radius: 25px; /* Rounded corners for the design */
+    background-color: #fff;
+    /* Your purple background */
+    border-radius: 25px;
+    /* Rounded corners for the design */
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1; /* Ensures it stays in the background */
-    overflow: hidden; /* Ensures the content does not flow outside the border-radius */
+    z-index: -1;
+    /* Ensures it stays in the background */
+    overflow: hidden;
+    /* Ensures the content does not flow outside the border-radius */
     /* Add any additional background styling such as gradients or images */
 }
 
 .main-content {
     position: relative;
-    z-index: 1; /* Ensures your content sits on top of the background design */
+    z-index: 1;
+    /* Ensures your content sits on top of the background design */
 }
 
-.form-section, .image-section {
+.form-section,
+.image-section {
     padding: 30px;
 }
 
 /* Ensure the image is the same size as the form */
 .image-section img {
-    max-height: 600px; /* Adjust as needed */
+    max-height: 600px;
+    /* Adjust as needed */
     object-fit: cover;
-    border-radius: 15px; /* Rounded corners for the image */
+    border-radius: 15px;
+    /* Rounded corners for the image */
 }
 
 
@@ -93,11 +148,13 @@ body {
     background: #FFFFFF;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
 .input-group-text {
     border-radius: 0 4px 4px 0;
 }
+
 .btn {
     border-radius: 4px;
 }
@@ -109,27 +166,34 @@ body {
 }
 
 .bg-white {
-    border-radius: 8px; /* Adjust the border-radius as needed */
+    border-radius: 8px;
+    /* Adjust the border-radius as needed */
 }
 
 a {
     text-decoration: none;
 }
 
-a.purple-link, a.purple-link.text-sm {
-    margin-bottom: 16px; /* Add space below the links */
-    display: block; 
+a.purple-link,
+a.purple-link.text-sm {
+    margin-bottom: 16px;
+    /* Add space below the links */
+    display: block;
 }
 
 
 
-.text-primary, .purple-link {
-    color: #8A2BE2; /* Use the purple for primary text links */
+.text-primary,
+.purple-link {
+    color: #8A2BE2;
+    /* Use the purple for primary text links */
     font-weight: bold;
 }
 
-.text-primary:hover, .purple-link:hover {
-    color: #9F7AEA; /* Lighter purple for hover state */
+.text-primary:hover,
+.purple-link:hover {
+    color: #9F7AEA;
+    /* Lighter purple for hover state */
     text-decoration: none;
 }
 
@@ -178,23 +242,23 @@ a.purple-link, a.purple-link.text-sm {
 
 .divider-text {
     padding: 0px;
-    color:#808080;
+    color: #808080;
     font-weight: 500;
 }
 
 /* Contact using with buttons */
-.google-btn{
+.google-btn {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 10px;
     margin-right: 10px;
     display: flex;
-    align-items: center; 
+    align-items: center;
     margin-bottom: 15px;
     margin-top: 5px;
 }
 
-.google-btn:hover{
+.google-btn:hover {
     background-color: #f0f0f0;
 }
 
@@ -206,7 +270,8 @@ a.purple-link, a.purple-link.text-sm {
 
 
 /* Cursor */
-.cursor-small, .cursor-big {
+.cursor-small,
+.cursor-big {
     position: fixed;
     pointer-events: none;
     z-index: 9999;
@@ -216,132 +281,463 @@ a.purple-link, a.purple-link.text-sm {
 .cursor-small {
     width: 8px;
     height: 8px;
-    background-color: #5D3F6A; /* Dark purple for the small cursor */
+    background-color: #5D3F6A;
+    /* Dark purple for the small cursor */
     border-radius: 50%;
     position: absolute;
-    pointer-events: none; /* Prevents the cursor from interfering with clickable elements */
+    pointer-events: none;
+    /* Prevents the cursor from interfering with clickable elements */
 }
 
 .cursor-big {
     width: 50px;
     height: 50px;
-    background-color: rgba(138, 43, 226, 0.3); /* Adjusted opacity */
+    background-color: #7D7D7D;
+    /* background-color: rgba(138, 43, 226, 0.3); */
+    /* Adjusted opacity */
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
     mix-blend-mode: multiply;
-    transition: transform 0.2s ease-out; /* This creates the lag effect */
-    
+    transition: transform 0.2s ease-out;
+    /* This creates the lag effect */
+
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
+/* Filter Card */
+.questionnaire {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
 }
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 150vh;
-    padding: 1rem;
-}
-.card-container {
-    display: flex;
-    width: auto; /* Auto width to fit the content */
-    margin: auto;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-}
-.card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.card-body {
-    padding: 10rem;
-    width: auto; /* Auto width to fit the content */
-    max-width: 700px; /* Set a max width for the form if necessary */
-}
-.divider {
-    display: flex;
-    align-items: center;
+
+.question-card {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     text-align: center;
-    margin: 20px 0;
-}
-.divider::before,
-.divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #000;
-}
-.divider::before {
-    margin-right: .25em;
-}
-.divider::after {
-    margin-left: .25em;
-}
-.image-container {
-    display: none; /* Hide the image container for now */
+    transform-style: preserve-3d;
 }
 
-/* General styles */
- body {
+.prev,
+.next {
+    margin-top: 10px;
+}
+
+.progress-tracker {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #666;
+}
+
+
+
+/* Landing Page */
+/* Add this to your main.css or equivalent stylesheet */
+:root {
+    --slug-yellow: #ffd600;
+    /* Adjust the shade of yellow as needed */
+    --slug-blue: rgb(37, 150, 190);
+}
+
+body,
+html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .header {
-    background-color: yellow; /* Yellow background for the header */
-    padding: 10px 0;
-    text-align: center;
-    width: 100%; /* Full width */
-    position: fixed; /* Fixed at the top */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    z-index: 1000; /* Ensure it's above other content */
-  }
-  
-  .title {
-    margin: 0; /* Remove default margin */
-    font-size: 2em;
+    font-family: 'Open Sans', sans-serif;
+    /* or any other font */
+}
+
+nav {
+    /* Navigation bar styling */
+}
+
+.hero-section {
+    background-color: var(--slug-yellow);
+    text-align: left; /* Align text to the left */
+    padding: 50px 20px; /* Adjust padding as needed */
+    width: 100%; /* Ensure it takes the full width */
+    height: 100vh; /* Make the hero section full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: flex-start; /* Horizontally align content to the left */
+}
+
+
+.btn-primary {
+    background-color: var(--slug-blue);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
     font-weight: bold;
-    color: black; /* Text color for the title */
-  }
-  
-  .navbar {
-    background-color: #333; /* Dark background for the navbar */
-    color: white;
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-    margin-top: 50px; /* Give space for the fixed header */
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navbar li {
-    display: inline;
-    margin: 0 226px;
-  }
-  
-  .navbar a {
+    border-radius: 5px;
     text-decoration: none;
-    color: white;
-    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--slug-blue), 10%);
+}
+
+/* NavBar */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    /* Ensure the navbar is above other content */
+}
+
+.navbar.transparent {
+    background-color: rgba(255, 255, 0, 0.5);
+    /* Yellow with some transparency */
+}
+
+.navbar.opaque {
+    background-color: #ffffff;
+    /* White for when scrolled */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional: add shadow for depth */
+}
+
+
+
+/* Initial styles for the Login button */
+.nav-item .login-btn {
+    border-color: #1d63ff;
+    color: #1d63ff !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Hover styles for the Login button */
+.nav-item .login-btn:hover {
+    background-color: #1d63ff;
+    color: white !important;
+}
+
+/* Initial styles for the Get Started button */
+.nav-item .signup-btn {
+    border-color: #1d63ff;
+    background-color: #1d63ff;
+    color: white !important;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Hover styles for the Get Started button */
+.nav-item .signup-btn:hover {
+    background-color: transparent;
+    border-color: #1d63ff;
+    color: #1d63ff !important;
+}
+
+
+
+/* Slug Button */
+/* style.css */
+
+.slug-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFEA00;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 30px;
+    width: 375px;
+    /* Fixed width */
+    height: 75px;
+    /* Fixed height */
+}
+
+/* Ensure button is responsive and doesn't overflow small screens */
+@media (max-width: 400px) {
+    .slug-button {
+        width: 95%;
+        /* Take up most of the screen width */
+        height: auto;
+        /* Adjust height automatically */
+        padding: 10px;
+        /* Reduce padding */
+        font-size: 18px;
+        /* Adjust font size for smaller screens */
+    }
+}
+
+.slug-button:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slug-icon {
+    height: 60%;
+    /* Set height in relation to button */
+    width: auto;
+    /* Auto width based on height to maintain aspect ratio */
+    fill: #FFEA00;
+    transition: fill 0.3s ease;
+}
+
+.slug-icon:hover {
+    fill: #D4C000;
+}
+
+
+/* Custom CSS */
+.nav-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-underline::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #3B82F6;
+    /* Tailwind blue-500 */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hover-underline:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* style.css */
+
+/* Existing styles for larger devices */
+
+
+  
+
+
+
+/* Hamburger Menu Button Styles */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Add a rotation animation to the button when changing state */
+.navbar-toggler.active {
+    transform: rotate(180deg);
+}
+
+.navbar-toggler .line {
+    fill: black;
+    /* Initial color of the lines */
+    transition: fill 0.3s, transform 0.3s;
+}
+
+.navbar-toggler.active .line {
+    fill: white;
+    /* Color of lines when active */
+}
+
+.navbar-toggler .line.top {
+    transform-origin: center;
+    transition: transform 0.3s;
+}
+
+.navbar-toggler .line.bottom {
+    transform-origin: center;
+    transition: transform 0.3s;
+}
+
+.navbar-toggler.active .line.top {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.active .line.bottom {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+.mnlinks {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12vw;
+    letter-spacing: 0.05em;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.button {
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    height: 10vw;
+    /* Fixed height */
+    width: 35vw;
+    font-size: 4vw;
+    /* Other styles */
+}
+
+/* Set a minimum padding and width for smaller viewports */
+@media (max-width: 300px) {
+    .button {
+        padding: 12px;
+        /* Minimum padding */
+        width: 80px;
+        /* Minimum width */
+    }
+}
+
+
+/* Set a maximum padding and width for larger viewports */
+@media (min-width: 1200px) {
+    .button {
+        padding: 24px;
+        /* Maximum padding */
+        width: 250px;
+        /* Maximum width */
+    }
+}
+
+.parallax-bubble {
+    position: absolute;
+    font-size: 2em;
+    color: yellow;
+}
+
+
+
+.slugHead {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: #1d63ff;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.heading{
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: #1d63ff;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.3vw;
+}
+
+.contain {
+    /* Your existing styles for container */
+    text-align: left; /* Align text to the left */
   }
   
-  .navbar a:hover {
-    background-color: #555;
-  }
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow: visible;
+    justify-content: flex-start; /* Aligns flex items to the start (left) */
+    text-align: left; /* Aligns text to the left */
+}
+
+.customize-your-meal {
+    display: flex; /* Keeps words in a single line */
+    justify-content: flex-start; /* Aligns flex items to the start (left) */
+    text-align: left; /* Aligns text to the left */
+    flex-wrap: nowrap; /* Prevents wrapping */
+    margin: 0; /* Adjust as needed */
+}
+
+.customize-your-meal span {
+    white-space: nowrap; /* Prevents breaking within a word */
+    margin-right: 5px; /* Adds spacing after words */
+}
+
   
-  /* Adjust padding for sections to ensure they are not hidden behind the fixed navbar */
-  section {
-    padding-top: 260px; /* Height of the navbar plus some extra space */
-    padding-bottom: 20px;
-  }
-  
-  /* Additional content styles go here */ 
+
+/* Tagline */
+.trailsText {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 80px; /* Adjust height if needed */
+    line-height: 80px; /* Adjust line height if needed */
+    color: black;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    will-change: transform, opacity;
+    overflow: visible;
+    margin-bottom: 0;
+    max-width: 1200px; /* Set a max-width for large screens */
+    padding-left: 10vw; /* Add some padding if necessary */
+    padding-right: 20px;
+}
+
+.trailsText > div {
+    padding-right: 0.05em;
+    overflow: visible;
+}
+
+.tag-para{
+    color: #121722;
+}
+/* Responsive styles for smaller devices */
+@media (max-width: 768px) {
+    .customize-your-meal {
+        flex-wrap: wrap; /* Allows text to wrap to the next line */
+    }
+    .customize-your-meal span {
+        display: block; /* Stacks words vertically */
+        margin: 0px; /* Centers each word and adds vertical spacing */
+    }
+}
+
+/* Adjust font size for different screen sizes */
+@media (max-width: 768px) {
+    .trailsText {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .trailsText {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .customize-your-meal {
+        /* ... other properties ... */
+        margin: 0px; /* Add vertical margin if needed */
+    }
+    .customize-your-meal span {
+        /* ... other properties ... */
+        margin: 0px; /* Add more vertical margin for wrapped items */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 30px 15px; /* Reduce padding on smaller screens */
+    }
+}
