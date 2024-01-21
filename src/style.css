@@ -741,3 +741,116 @@ nav {
         padding: 30px 15px; /* Reduce padding on smaller screens */
     }
 }
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh;
+    padding: 1rem;
+}
+.card-container {
+    display: flex;
+    width: auto; /* Auto width to fit the content */
+    margin: auto;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-body {
+    padding: 10rem;
+    width: auto; /* Auto width to fit the content */
+    max-width: 600px; /* Set a max width for the form if necessary */
+}
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+.divider::before {
+    margin-right: .25em;
+}
+.divider::after {
+    margin-left: .25em;
+}
+.image-container {
+    display: none; /* Hide the image container for now */
+}
+
+/* General styles */
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    background-color: blue; /* Yellow background for the header */
+    padding: 10px 0;
+    text-align: center;
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed at the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .title {
+    margin: 0; /* Remove default margin */
+    font-size: 2em;
+    font-weight: bold;
+    color: orange; /* Text color for the title */
+  }
+  
+  .navbar {
+    background-color: #333; /* Dark background for the navbar */
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 50px; /* Give space for the fixed header */
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar li {
+    display: inline;
+    margin: 0 226px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+  }
+  
+  .navbar a:hover {
+    background-color: #555;
+  }
+  
+  /* Adjust padding for sections to ensure they are not hidden behind the fixed navbar */
+  section {
+    padding-top: 260px; /* Height of the navbar plus some extra space */
+    padding-bottom: 20px;
+  }
+
+  
+  /* Additional content styles go here */ 
