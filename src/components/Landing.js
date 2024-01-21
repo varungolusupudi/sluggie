@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import logo from '../logo.png';
 import TaglineTrail from './TaglineTrail';
 import { useSpring, animated } from 'react-spring';
+import FAQ from './FAQ';
 import ParallaxBubble from './ParallaxBubbles';
 import audioFile from '../slugtrition.wav';
 import audioIcon from '../audio.svg';
 import pancake from '../pancake.png';
+import instagram from '../instagram.svg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -172,6 +174,19 @@ const HeroSection = () => {
     </section>
   );
 };
+//FAQ Component
+const App = () => {
+  const faqData = [
+    { id: 1, question: 'What is SLugtrition?', answer: 'Slugtrition is a dietary planner that curates a food plan for UCSC students based on their needs and dining hall preferences' },
+    { id: 2, question: 'How do I use Slugtrition', answer: 'By completing the form for dietary preferences after logging in, Slugtrition will present a dashboard with a daily plan' }
+  ];
+
+  return (
+    <div>
+      <FAQ data={faqData} />
+    </div>
+  );
+};
 
 
 // Features Section Component
@@ -194,12 +209,44 @@ const FeaturesSection = () => {
 // Footer Component
 const Footer = () => {
   return (
-    <footer>
-      {/* Footer content */}
-      <p>© 2024 Slugtrition. All rights reserved.</p>
+    <footer style={{ backgroundColor: '#f5f5f5', padding: '40px 0', borderTop: '1px solid #eaeaea' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
+        {/* Logo and tagline */}
+        <div style={{ marginBottom: '30px' }}>
+          <img src={logo} alt="Slugtrition Logo" style={{ height: '60px' }} />
+          <p style={{ marginTop: '10px', color: '#333', fontSize: '18px', fontWeight: '500' }}>Nourish your life with Slugtrition.</p>
+        </div>
+
+        {/* Navigation Links */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px', flexWrap: 'wrap' }}>
+          <a href="/about" style={{ margin: '0 15px', textDecoration: 'none', color: '#007bff', fontSize: '16px' }}>About</a>
+          <a href="/contact" style={{ margin: '0 15px', textDecoration: 'none', color: '#007bff', fontSize: '16px' }}>Contact</a>
+          {/* Additional Links Here */}
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '30px' }}>
+          <a href="http://www.facebook.com" style={{ margin: '0 8px' }}>
+            <img src={instagram} alt="Facebook" style={{ height: '24px' }} />
+          </a>
+          <a href="http://www.twitter.com" style={{ margin: '0 8px' }}>
+            <img src={instagram} alt="Twitter" style={{ height: '24px' }} />
+          </a>
+          <a href="http://www.instagram.com" style={{ margin: '0 8px' }}>
+            <img src={instagram} alt="Instagram" style={{ height: '24px' }} />
+          </a>
+        </div>
+
+        {/* Copyright Information */}
+        <div style={{ color: '#333', fontSize: '14px' }}>
+          <p>© 2024 Slugtrition. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
   );
 };
+
+
+
 
 
 // Main Landing Component

@@ -1,24 +1,63 @@
 import React, { useState } from 'react';
-import '../App.css'; 
-import '../style.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth, firestore } from '../firebase';
+import { SignInButton } from '@clerk/clerk-react';
+import '../App.css';
+import '../style.css';
+import img from '../img.jpg';
+import google from '../goog.png';
+
+
 
 const SignInForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordShown, setPasswordShown] = useState(false);
-    const Navigate = useNavigate();
-
+    const [error, setError] = useState(''); // Declare error state
+    const navigate = useNavigate();
     // Toggle the visibility of the password
     const togglePasswordVisibility = () => {
         setPasswordShown(!passwordShown);
     };
 
+    const handleForgotPassword = async () => {
+        if (!email) {
+            setError("Please enter your email to reset password.");
+            return;
+        }
+        try {
+            await sendPasswordResetEmail(auth, email);
+            alert("Password reset email sent!");
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    const signInWithGoogle = async () => {
+        const provider = new GoogleAuthProvider();
+        const auth = getAuth();
+        try {
+          const result = await signInWithPopup(auth, provider);
+          // Google sign-in successful, you can use result.user
+          navigate("/dashboard"); // or your desired route
+        } catch (error) {
+          setError(error.message); // Handle sign-in errors here
+        }
+      };
+
     // Example function to handle form submission
     const handleSubmit = (e) => {
-        //e.preventDefault();
-        // Handle sign-in logic here
-        Navigate('/Personal')
+        e.preventDefault();
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in successfully
+                navigate("/dashboard"); // or your desired route
+            })
+            .catch((error) => {
+                setError(error.message); // Set the error message
+            });
     };
 
     return (
@@ -62,6 +101,9 @@ const SignInForm = () => {
                                     </button>
                                 </div>
                             </div>
+
+                            <Link to="/password-reset" className="purple-link text-sm">Forgot password?</Link>
+                            {error && <p className="text-danger">{error}</p>}
                             <button className="btn btn-primary btn-block mt-2" type="submit">Log in</button>
                         </form>
 
@@ -75,21 +117,21 @@ const SignInForm = () => {
 
                             <div className="d-flex justify-content-center mt-4">
                                 {/* Google Sign-in logic here */}
-                                <button type="button" className="btn google-btn" style={{ border: '1px solid #ccc' }}>
-                                    <img src="goog.png" alt="Google" style={{ height: '20px' }} />
+                                <button type="button" className="btn google-btn" style={{ border: '1px solid #ccc' }} onClick={signInWithGoogle}>
+                                    <img src={google} alt="Google" style={{ height: '20px' }} />
                                     Google
                                 </button>
                             </div>
                         </div>
 
                         <div className="text-center mt-12 text-gray-500 mx-auto">
-                            Don't have an account? <a href="/signup" className="purple-link text-base">Sign up</a>
+                            Don't have an account? <Link to="/sign-up" className="purple-link text-base">Sign up</Link>
                         </div>
                     </div>
                 </div>
 
                 <div className="col-lg-6 col-md-8 mx-auto">
-                    <img src="img.jpg" alt="Descriptive Text" className="img-fluid rounded" />
+                    <img src={img} alt="Descriptive Text" className="img-fluid rounded" />
                 </div>
             </div>
         </div>
