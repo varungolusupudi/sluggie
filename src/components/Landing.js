@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import '../style.css'; // Make sure your CSS file paths are correct
 import { ReactComponent as SlugIcon } from '../slug-icon.svg';
 import { Link } from 'react-router-dom';
 import logo from '../logo.png';
 import TaglineTrail from './TaglineTrail';
-import { useSpring, animated } from 'react-spring';
 import FAQ from './FAQ';
 import ParallaxBubble from './ParallaxBubbles';
 import audioFile from '../slugtrition.wav';
@@ -178,7 +178,10 @@ const HeroSection = () => {
 const App = () => {
   const faqData = [
     { id: 1, question: 'What is SLugtrition?', answer: 'Slugtrition is a dietary planner that curates a food plan for UCSC students based on their needs and dining hall preferences' },
-    { id: 2, question: 'How do I use Slugtrition', answer: 'By completing the form for dietary preferences after logging in, Slugtrition will present a dashboard with a daily plan' }
+    { id: 2, question: 'How do I use Slugtrition', answer: 'By completing the form for dietary preferences after logging in, Slugtrition will present a dashboard with a daily plan' },
+    { id: 3, question: 'How can I track my daily food intake in the app?', answer: 'To track your daily food intake, navigate to the "My Meals" section on the app. There, you can add each meal and snack with details like ingredients and quantities. The app will automatically calculate your daily nutritional intake based on the input.' },
+    { id: 4, question: 'Is it possible to customize my dietary preferences and restrictions?', answer: 'Absolutely! In the "Settings" tab, you can customize your dietary preferences and restrictions. Choose from options like vegetarian, vegan, gluten-free, or specify any allergies you may have. The app will then tailor meal suggestions and track your intake accordingly.' }
+    
   ];
 
   return (
@@ -206,6 +209,28 @@ const FeaturesSection = () => {
   );
 };
 
+
+const PreFooter = () => {
+  return (
+    <div style={{ backgroundColor: 'var(--slug-yellow)', padding: '20px', textAlign: 'center' }}>
+      {/* Pre-Footer content */}
+      <h2>TRANSFORM YOUR DINING HALL ROUTINE WITH SLUGTRITION! 🍽️✨</h2>
+      <p>Hey Slugs! Get ready to indulge in a dining hall experience that's as unique as you are. Slugtrition is here to revolutionize your meals with a personalized touch that caters to your palate and nourishes your body.</p>
+      <p>Why settle for the ordinary when you can have a dining plan that's all about <strong>YOU</strong>? Embrace the art of eating well with Slugtrition—where every meal is a celebration of flavor, nutrition, and the vibrant UCSC spirit.</p>
+      
+      {/* Button */}
+      <div className="bigpadding">
+        <button className="wt-btn_sign">
+          <span className="wt-btn_sign-bound">
+            <span data-width="#fff" data-text="Get Started">Get Started</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+
 // Footer Component
 const Footer = () => {
   return (
@@ -213,8 +238,8 @@ const Footer = () => {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
         {/* Logo and tagline */}
         <div style={{ marginBottom: '30px' }}>
-          <img src={logo} alt="Slugtrition Logo" style={{ height: '60px' }} />
-          <p style={{ marginTop: '10px', color: '#333', fontSize: '18px', fontWeight: '500' }}>Nourish your life with Slugtrition.</p>
+          <img src={logo} alt="Slugtrition Logo" style={{ height: '60px', marginBottom: '20px'}} />
+          <p style={{ marginToåp: '10px', color: '#333', fontSize: '18px', fontWeight: '500' }}>Nourish your life with Slugtrition.</p>
         </div>
 
         {/* Navigation Links */}
@@ -266,6 +291,7 @@ const Landing = () => {
       <ParallaxBubble text="World" offset={100} /> */}
       <SlugIcon className="slug-icon" onClick={handleIconClick} />
       {/* Add other components or sections as needed */}
+      <PreFooter />
       <Footer />
     </div>
   );
